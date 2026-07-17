@@ -11,6 +11,7 @@
   <title>FØ Pizza — Le feu, à votre façon</title>
   <link rel="preload" href="assets/hero-premium.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <noscript><style>.reveal,.hero-reveal{opacity:1!important;transform:none!important}</style></noscript>
   <script type="module" src="/src/main.ts"></script>
 </head>
 <body>
@@ -132,19 +133,19 @@
         </div>
 
         <div class="ritual-chapters" aria-label="Les trois gestes FØ">
-          <article class="ritual-step is-active" data-ritual-step="0" tabindex="0" aria-current="step">
+          <article class="ritual-step is-active" data-ritual-step="0" tabindex="0" role="button" aria-pressed="true" aria-current="step">
             <span>01 — L’IMPULSION</span>
             <h3>Ce soir,<br>vous êtes plutôt&nbsp;?</h3>
             <p>Réconfort, fraîcheur ou grand écart assumé. Commencez par votre envie, pas par une recette imposée.</p>
             <div class="ritual-detail"><strong>65+</strong><small>possibilités<br>dès le premier geste</small></div>
           </article>
-          <article class="ritual-step" data-ritual-step="1" tabindex="0">
+          <article class="ritual-step" data-ritual-step="1" tabindex="0" role="button" aria-pressed="false">
             <span>02 — LE GESTE</span>
             <h3>Composez.<br>Regardez-la naître.</h3>
             <p>Base tomate ou crème, ingrédients visibles, quantités choisies. Votre pizza prend forme devant vous.</p>
             <div class="ritual-detail"><strong>100%</strong><small>votre choix<br>du premier au dernier topping</small></div>
           </article>
-          <article class="ritual-step" data-ritual-step="2" tabindex="0">
+          <article class="ritual-step" data-ritual-step="2" tabindex="0" role="button" aria-pressed="false">
             <span>03 — LE FEU</span>
             <h3>Deux minutes.<br>La flamme tranche.</h3>
             <p>Le four saisit la pâte à très haute température. Un bord vivant, un cœur léger, une pizza prête à sortir.</p>

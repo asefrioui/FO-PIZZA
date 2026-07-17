@@ -2,31 +2,30 @@ import { initHeroDepth } from './components/heroDepth';
 import { initMenu } from './components/menu';
 import { initNavigation } from './components/navigation';
 import { initOrderModal } from './components/orderModal';
-import { initCounters, initRevealAnimations } from './components/reveal';
+import { initRevealAnimations } from './components/reveal';
 import { query } from './lib/dom';
 
-function initLazyPizzaStudio(): void {
-  const studio = query<HTMLElement>('#studio');
+function initLazyFeature(selector: string, loadFeature: () => Promise<void>): void {
+  const feature = query<HTMLElement>(selector);
   let loaded = false;
 
-  const loadStudio = async (): Promise<void> => {
+  const load = async (): Promise<void> => {
     if (loaded) return;
     loaded = true;
-    const { initPizzaStudio } = await import('./components/pizzaStudio');
-    initPizzaStudio();
+    await loadFeature();
   };
 
   if (!('IntersectionObserver' in window)) {
-    void loadStudio();
+    void load();
     return;
   }
 
   const observer = new IntersectionObserver((entries) => {
     if (!entries.some((entry) => entry.isIntersecting)) return;
     observer.disconnect();
-    void loadStudio();
+    void load();
   }, { rootMargin: '600px 0px' });
-  observer.observe(studio);
+  observer.observe(feature);
 }
 
 function init(): void {
@@ -35,9 +34,15 @@ function init(): void {
   initOrderModal();
   initMenu();
   initRevealAnimations();
-  initCounters();
   initHeroDepth();
-  initLazyPizzaStudio();
+  initLazyFeature('#concept', async () => {
+    const { initRitual } = await import('./components/ritual');
+    initRitual();
+  });
+  initLazyFeature('#studio', async () => {
+    const { initPizzaStudio } = await import('./components/pizzaStudio');
+    initPizzaStudio();
+  });
 }
 
 if (document.readyState === 'loading') {
