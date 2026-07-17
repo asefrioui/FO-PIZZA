@@ -1,0 +1,19 @@
+:root {
+  --ink: #12110f;
+  --ink-soft: #211f1b;
+  --paper: #f3efe6;
+  --paper-light: #fbf8f1;
+  --paper-deep: #e8e1d5;
+  --orange: #ff4f1f;
+  --orange-dark: #de3910;
+  --green: #49715a;
+  --steel: #b9bab5;
+  --muted: #6f6a62;
+  --line: rgba(18, 17, 15, .17);
+  --line-light: rgba(255, 255, 255, .18);
+  --white: #fffdf8;
+  --font-sans: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --shell: min(1320px, calc(100vw - 64px));
+  --ease: cubic-bezier(.22, .72, .24, 1);
+}

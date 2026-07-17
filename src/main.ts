@@ -1,4 +1,6 @@
-import { initHeroDepth } from './components/heroDepth';
+import '@fontsource-variable/instrument-sans/wght.css';
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
 import { initMenu } from './components/menu';
 import { initNavigation } from './components/navigation';
 import { initOrderModal } from './components/orderModal';
@@ -34,14 +36,9 @@ function init(): void {
   initOrderModal();
   initMenu();
   initRevealAnimations();
-  initHeroDepth();
-  initLazyFeature('#concept', async () => {
-    const { initRitual } = await import('./components/ritual');
-    initRitual();
-  });
   initLazyFeature('#studio', async () => {
-    const { initPizzaStudio } = await import('./components/pizzaStudio');
-    initPizzaStudio();
+    const { initCounter } = await import('./components/counter');
+    initCounter();
   });
 }
 

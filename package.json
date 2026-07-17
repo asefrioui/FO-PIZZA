@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@fontsource-variable/instrument-sans": "^5.2.8",
+    "@fontsource/instrument-serif": "^5.2.8",
     "eslint": "^9.32.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",

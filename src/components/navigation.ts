@@ -7,6 +7,12 @@ export function initNavigation(): void {
   const navigation = query<HTMLElement>('.main-nav');
   const actions = query<HTMLElement>('.header-actions');
   const locationTrigger = query<HTMLButtonElement>('.location-trigger');
+  const locationButtons = queryAll<HTMLButtonElement>('[data-location]', actions);
+
+  const closeLocationMenu = (): void => {
+    actions.classList.remove('location-open');
+    locationTrigger.setAttribute('aria-expanded', 'false');
+  };
 
   const closeMobileMenu = (): void => {
     navigation.classList.remove('open');
@@ -41,8 +47,36 @@ export function initNavigation(): void {
 
   document.addEventListener('click', (event) => {
     if (event.target instanceof Node && !actions.contains(event.target)) {
-      actions.classList.remove('location-open');
-      locationTrigger.setAttribute('aria-expanded', 'false');
+      closeLocationMenu();
     }
+  });
+
+  locationTrigger.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowDown') return;
+    event.preventDefault();
+    actions.classList.add('location-open');
+    locationTrigger.setAttribute('aria-expanded', 'true');
+    locationButtons.at(0)?.focus();
+  });
+
+  locationButtons.forEach((button, index) => {
+    button.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeLocationMenu();
+        locationTrigger.focus();
+        return;
+      }
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowDown' ? 1 : -1;
+      const target = locationButtons[(index + direction + locationButtons.length) % locationButtons.length];
+      target?.focus();
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    closeMobileMenu();
+    closeLocationMenu();
   });
 }
