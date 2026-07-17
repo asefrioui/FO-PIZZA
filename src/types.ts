@@ -13,7 +13,6 @@ export type OrderLocation = {
   readonly label: string;
   readonly delivery: string;
   readonly pickup: string;
-  readonly onsite: boolean;
 };
 
 export type IngredientKey = 'pepperoni' | 'basil' | 'mushroom' | 'olive';

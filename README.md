@@ -20,13 +20,12 @@ Le build déployable est généré dans `dist/`.
 ## Architecture
 
 - `src/data/` : produits, restaurants et configuration des ingrédients.
-- `src/components/` : navigation, commande, carte et comptoir d’inspiration.
-- `src/styles/` : design tokens, base, composants, sections et responsive.
+- `src/components/` : navigation, commande, carte, rituel narratif et studio 3D.
 - `src/lib/` : utilitaires DOM et formatage.
 - `src/main.ts` : initialisation et chargement différé des expériences interactives.
 - `assets/` : visuels locaux optimisés.
 
-Le comptoir d’inspiration est isolé dans un chunk chargé uniquement à proximité de sa section. La structure HTML/CSS conserve les contenus essentiels sans JavaScript. Les polices Instrument Sans et Instrument Serif sont auto-hébergées afin de garantir un rendu cohérent des accents français.
+Le rituel au scroll et le studio 3D sont isolés dans des chunks chargés uniquement à proximité de leur section. La structure HTML/CSS conserve un aperçu statique et les informations essentielles restent accessibles sans les interactions.
 
 ## Qualité
 
@@ -43,5 +42,4 @@ Le projet impose :
 - Les adresses, téléphones, prix et liens de commande proviennent du site officiel FØ Pizza.
 - Les photos des restaurants proviennent de sa médiathèque.
 - Le visuel héro est une création originale générée pour cette direction artistique.
-- Les prix, horaires, services disponibles, textes légaux, visuels de présentation et données commerciales affichées (65 ingrédients, cuisson en deux minutes, prix à partir de 8,95 €) doivent être validés par le client avant publication.
-- Une photographie propre au restaurant de Saclay et le logo officiel vectoriel restent à fournir pour une version définitive de marque.
+- Les prix, horaires, textes légaux, visuels de présentation et données de cuisson affichées (450 °C / environ deux minutes) doivent être validés par le client avant publication.

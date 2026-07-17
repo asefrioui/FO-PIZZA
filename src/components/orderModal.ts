@@ -19,7 +19,6 @@ export function initOrderModal(): void {
   const closeButton = query<HTMLButtonElement>('.modal-close', modal);
   const headerActions = query<HTMLElement>('.header-actions');
   const locationTrigger = query<HTMLButtonElement>('.location-trigger');
-  const pageRegions = queryAll<HTMLElement>('header, main, footer, .mobile-order-cta');
   let selectedLocation: LocationKey = readSavedLocation();
   let lastFocused: HTMLElement | null = null;
 
@@ -30,7 +29,6 @@ export function initOrderModal(): void {
     query<HTMLElement>('.mobile-order-location').textContent = details.label;
     query<HTMLAnchorElement>('#delivery-link').href = details.delivery;
     query<HTMLAnchorElement>('#pickup-link').href = details.pickup;
-    query<HTMLAnchorElement>('#onsite-link').hidden = !details.onsite;
 
     queryAll<HTMLButtonElement>('[data-order-location]').forEach((button) => {
       setPressed(button, button.dataset.orderLocation === location);
@@ -51,7 +49,6 @@ export function initOrderModal(): void {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
-    pageRegions.forEach((region) => { region.inert = true; });
     window.requestAnimationFrame(() => closeButton.focus());
   };
 
@@ -60,7 +57,6 @@ export function initOrderModal(): void {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
-    pageRegions.forEach((region) => { region.inert = false; });
     lastFocused?.focus();
   };
 
