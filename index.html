@@ -30,7 +30,7 @@
       </button>
 
       <nav class="main-nav" id="navigation" aria-label="Navigation principale">
-        <a href="#concept">Le concept</a>
+        <a href="#concept">L’expérience</a>
         <a href="#studio">Studio FØ</a>
         <a href="#carte">La carte</a>
         <a href="#restaurants">Restaurants</a>
@@ -99,36 +99,56 @@
       </div>
     </div>
 
-    <section class="concept section" id="concept">
-      <div class="shell">
-        <header class="section-head reveal">
-          <p class="eyebrow"><span>01</span> L’expérience FØ</p>
-          <div>
-            <h2>La pizza, sans<br><em>mode d’emploi.</em></h2>
-            <p>On prépare la pâte. Vous écrivez la suite. Des ingrédients visibles, un four incandescent et zéro recette imposée.</p>
-          </div>
-        </header>
+    <section class="ritual" id="concept" aria-labelledby="ritual-title">
+      <div class="shell ritual-intro reveal">
+        <p class="eyebrow"><span>01</span> Le rituel FØ</p>
+        <div>
+          <h2 id="ritual-title">Pas un menu.<br><em>Un mouvement.</em></h2>
+          <p>La commande ne commence pas par une longue liste. Elle avance en trois gestes simples, de votre envie jusqu’au feu.</p>
+        </div>
+      </div>
 
-        <div class="concept-grid">
-          <article class="concept-card concept-card-large reveal">
-            <img src="assets/official-restaurant-3.webp" alt="Le four à bois dans le restaurant FØ Pizza" loading="lazy">
-            <div class="concept-card-copy">
-              <span>01 / LE FEU</span>
-              <h3>Une cuisson vive.<br>Un goût qui reste.</h3>
-              <p>Une pâte saisie à haute température pour le contraste parfait : légère au cœur, croustillante sur les bords.</p>
+      <div class="shell ritual-layout">
+        <div class="ritual-stage reveal" data-ritual-stage data-state="0">
+          <div class="ritual-visual">
+            <img src="assets/hero-premium.webp" alt="Pizza FØ cuite au feu de bois" loading="lazy">
+            <div class="ritual-grid" aria-hidden="true"></div>
+            <div class="ritual-orbit" aria-hidden="true"><span>FØ · CHOISIR · COMPOSER · ENFOURNER ·</span></div>
+            <div class="ritual-flame" aria-hidden="true"></div>
+            <div class="ritual-metric">
+              <small data-ritual-kicker>LIBERTÉ</small>
+              <strong data-ritual-value>65+</strong>
+              <span data-ritual-unit>ingrédients</span>
             </div>
-          </article>
-          <article class="concept-card reveal" data-delay="100">
-            <div class="concept-stat">
-              <strong data-count="65">0</strong><sup>+</sup>
-              <p>ingrédients pour ne jamais refaire deux fois la même pizza.</p>
+          </div>
+          <div class="ritual-stage-footer">
+            <div>
+              <span data-ritual-progress>01 / 03</span>
+              <h3 data-ritual-heading>Choisissez votre direction.</h3>
             </div>
-            <img src="assets/official-restaurant-2.webp" alt="Le comptoir d’ingrédients frais FØ Pizza" loading="lazy">
+            <button class="button button-fire open-order" type="button">Commander <span>↗</span></button>
+          </div>
+          <noscript><p class="ritual-static-note">65 ingrédients, une composition libre et une cuisson vive au feu de bois.</p></noscript>
+        </div>
+
+        <div class="ritual-chapters" aria-label="Les trois gestes FØ">
+          <article class="ritual-step is-active" data-ritual-step="0" tabindex="0" aria-current="step">
+            <span>01 — L’IMPULSION</span>
+            <h3>Ce soir,<br>vous êtes plutôt&nbsp;?</h3>
+            <p>Réconfort, fraîcheur ou grand écart assumé. Commencez par votre envie, pas par une recette imposée.</p>
+            <div class="ritual-detail"><strong>65+</strong><small>possibilités<br>dès le premier geste</small></div>
           </article>
-          <article class="concept-card concept-quote reveal" data-delay="180">
-            <span class="quote-mark">“</span>
-            <p>Chaque pizza est unique.<br><em>Comme vous.</em></p>
-            <div><span></span> Manifeste FØ</div>
+          <article class="ritual-step" data-ritual-step="1" tabindex="0">
+            <span>02 — LE GESTE</span>
+            <h3>Composez.<br>Regardez-la naître.</h3>
+            <p>Base tomate ou crème, ingrédients visibles, quantités choisies. Votre pizza prend forme devant vous.</p>
+            <div class="ritual-detail"><strong>100%</strong><small>votre choix<br>du premier au dernier topping</small></div>
+          </article>
+          <article class="ritual-step" data-ritual-step="2" tabindex="0">
+            <span>03 — LE FEU</span>
+            <h3>Deux minutes.<br>La flamme tranche.</h3>
+            <p>Le four saisit la pâte à très haute température. Un bord vivant, un cœur léger, une pizza prête à sortir.</p>
+            <div class="ritual-detail"><strong>450°</strong><small>cuisson vive<br>au feu de bois</small></div>
           </article>
         </div>
       </div>
