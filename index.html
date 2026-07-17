@@ -11,7 +11,7 @@
   <title>FØ Pizza — Le feu, à votre façon</title>
   <link rel="preload" href="assets/hero-premium.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <script type="module" src="/src/main.ts"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -50,6 +50,12 @@
       </div>
     </div>
   </header>
+
+  <button class="mobile-order-cta open-order" type="button" aria-label="Commander auprès du restaurant sélectionné">
+    <span><small>Restaurant</small><strong class="mobile-order-location">Paris 13</strong></span>
+    <b>Commander</b>
+    <i aria-hidden="true">↗</i>
+  </button>
 
   <main id="contenu">
     <section class="hero" aria-labelledby="hero-title">
@@ -157,6 +163,7 @@
                 <div class="pizza-gloss"></div>
               </div>
             </div>
+            <noscript><p class="studio-static-label">Aperçu statique — activez JavaScript pour composer votre pizza.</p></noscript>
             <div class="oven-temp"><small>FOUR</small><strong>450°</strong><span>● PRÊT</span></div>
           </div>
 
